@@ -1,0 +1,7 @@
+{
+  "name": "nasa-image-of-the-day",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
