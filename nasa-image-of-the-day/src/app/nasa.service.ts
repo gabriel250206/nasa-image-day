@@ -8,12 +8,15 @@ import { Observable } from 'rxjs';
 export class NasaService {
 
   private apiUrl='https://api.nasa.gov/planetary/apod';
-  private apiKey='clzkYPbT0g6hbqPE2eribY4j8rvwFxYg3PwXr8xm';
-
+  private apiKey='CZwcFpqzmUuyR4vbepi3qmbYlMiobubPRPwziZM0';
+  
   constructor(private http: HttpClient) { 
     
   }
   getImageOfTheDay():Observable<any>{
     return this.http.get(`${this.apiUrl}?api_key=${this.apiKey}`) //comillas invertidas
+  }
+  getImageByDate(date:Date):Observable<any>{
+    return this.http.get(`${this.apiUrl}?api_key=${this.apiKey}&date=${date}`)
   }
 }

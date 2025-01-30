@@ -13,8 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
- 
+  
     <ion-content class="ion-padding">
+      <form (ngSubmit)="onSubmit()">
+        <input type="date" [(ngModel)]="selectedDate" name="date" required />
+        <button type="submit">Submit</button>
+      </form>
+
       <ng-container *ngIf="imageData; else loading">
         <ion-card>
           <img [src]="imageData.url" alt="NASA Image of the day">
@@ -30,6 +35,8 @@
           </ion-card-content>
 
         </ion-card>
+      
+
       </ng-container>
 
       <ng-template #loading>
